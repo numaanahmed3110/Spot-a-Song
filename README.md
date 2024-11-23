@@ -74,7 +74,7 @@
    - After completing the setup, run the script:
 
      ```bash
-     python spot_a_song.py
+     python index.py
      ```
 
 2. **Input Folder Path and Playlist Name:**
@@ -97,9 +97,8 @@
 ## Folder Structure:
 
 `Spot-a-Song/
-├── spot_a_song.py      # Main Python script
-├── .env                # Spotify credentials (do not share this file)
-├── requirements.txt    # List of dependencies
+├── index.py      # Main Python script
+├── .env                # Spotify credentials (do not share this file)    # List of dependencies
 ├── SongsNotFound.txt  # Log of unmatched songs
 ├── README.md           # Project documentation`
 
@@ -112,8 +111,6 @@
 - `.aac`
 - `.ogg`
 - `.m3u`
-
-  - You can add more formats as per your requirements in the `index.py` code.
 
 ## Notes:
 
