@@ -75,14 +75,15 @@ def write_songs_not_found(filename, songs):
 
 
 def find_audio_files(directory):
-    """Recursively find all audio files in a directory."""
+    """Recursively find all audio files in a directory, including subfolders."""
     audio_files = []
-    for root, _, files in os.walk(directory):
+    # Walk through the folder recursively
+    for root, dirs, files in os.walk(directory):
         for file in files:
             if file.lower().endswith(
-                (".mp3", ".wav", ".flac")
+                (".mp3", ".wav", ".flac",".m3u",".m4a",".ogg")
             ):  # Add more extensions if needed
-                print(f"Found file: {file}")
+                print(f"Found file: {file} in {root}")
                 audio_files.append(os.path.join(root, file))
     return audio_files
 
