@@ -3,6 +3,7 @@ import re
 from spotipy import Spotify
 from spotipy.oauth2 import SpotifyOAuth
 from dotenv import load_dotenv
+import time
 
 # Load environment variables
 load_dotenv()
@@ -81,6 +82,7 @@ def find_audio_files(directory):
             if file.lower().endswith(
                 (".mp3", ".wav", ".flac")
             ):  # Add more extensions if needed
+                print(f"Found file: {file}")
                 audio_files.append(os.path.join(root, file))
     return audio_files
 
@@ -113,6 +115,7 @@ def main():
             track_uris.append(track_uri)
         else:
             songs_not_found.append(song_title)
+        time.sleep(0.5)  # Add a half-second delay
 
     # Add found songs to the playlist
     if track_uris:
